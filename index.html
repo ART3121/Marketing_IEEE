@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IEEE New Era - Branding Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=Montserrat:wght@800;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-paper: #F8F8F8;
+            --ieee-blue: #002855;
+            --mieeeb-green: #8BC34A;
+            --pure-white: #FFFFFF;
+            --ink-black: #050505;
+            --insta-dark: #121212;
+            --insta-border: #333333;
+            --insta-gradient: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        }
+
+        body {
+            background-color: var(--bg-paper);
+            font-family: 'Space Grotesk', sans-serif;
+            overflow: hidden;
+            color: var(--ink-black);
+        }
+
+        .grain {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 100;
+        }
+
+        .slide {
+            display: none;
+            height: 100vh;
+            width: 100vw;
+            padding: 4rem;
+            position: relative;
+        }
+
+        .slide.active {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .title-heavy { font-family: 'Montserrat', sans-serif; font-weight: 900; text-transform: uppercase; line-height: 0.85; letter-spacing: -2px; }
+        .title-slab { font-family: 'Arvo', serif; font-weight: 700; }
+
+        .green-glow {
+            filter: drop-shadow(0px 0px 18px rgba(139, 195, 74, 0.6));
+        }
+
+        .blue-box {
+            background-color: var(--ieee-blue);
+            color: var(--pure-white);
+            padding: 2.5rem;
+            border: 8px solid var(--ink-black);
+            box-shadow: 12px 12px 0px var(--mieeeb-green);
+        }
+
+        .white-box {
+            background-color: var(--pure-white);
+            padding: 2.5rem;
+            border: 8px solid var(--ink-black);
+            box-shadow: 12px 12px 0px var(--ieee-blue);
+        }
+
+        /* Botões de Navegação */
+        .nav-btn {
+            background: var(--ink-black);
+            color: white;
+            padding: 15px 30px;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: all 0.2s;
+            cursor: pointer;
+            border: 4px solid transparent;
+        }
+
+        .nav-btn:hover {
+            background: var(--ieee-blue);
+            transform: translateY(-2px);
+            border-color: var(--mieeeb-green);
+        }
+
+        .badge {
+            background: var(--mieeeb-green);
+            color: black;
+            padding: 8px 16px;
+            font-weight: 900;
+            text-transform: uppercase;
+            display: inline-block;
+            transform: rotate(-3deg);
+            border: 4px solid black;
+        }
+
+        /* Instagram Mockup Styles - Dark Mode */
+        .insta-post {
+            width: 420px;
+            background: var(--insta-dark);
+            color: var(--pure-white);
+            border: 6px solid var(--ink-black);
+            box-shadow: 15px 15px 0px rgba(0,0,0,0.15);
+            border-radius: 16px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .insta-header {
+            padding: 14px 16px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid var(--insta-border);
+        }
+        .insta-avatar {
+            width: 36px;
+            height: 36px;
+            background: var(--insta-gradient);
+            border-radius: 50%;
+            margin-right: 12px;
+            padding: 2px;
+        }
+        .insta-avatar-inner {
+            width: 100%;
+            height: 100%;
+            background-color: var(--insta-dark);
+            border-radius: 50%;
+            border: 2px solid var(--insta-dark);
+        }
+        .insta-content {
+            background: var(--pure-white); 
+            height: 420px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        .insta-footer {
+            padding: 16px;
+            font-size: 0.95rem;
+            color: #E0E0E0;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.98); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        .active { animation: fadeIn 0.4s ease-out; }
+    </style>
+</head>
+<body>
+
+    <div class="grain"></div>
+
+    <!-- Slide 1: Home -->
+    <div class="slide active" id="slide1">
+        <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-10 max-w-[90rem] mx-auto w-full">
+            <div class="z-10">
+                <div class="badge mb-6">IEEE NEW ERA</div>
+                <h1 class="title-heavy text-8xl md:text-[11rem] text-[#002855] mb-8">O NOVO<br>IEEE.</h1>
+                <p class="title-slab text-2xl uppercase text-gray-700 max-w-xl">Mudanças são necessárias para o crescimento.</p>
+            </div>
+            <div class="relative flex justify-end">
+                <img src="mainMIEEEB.png" alt="Mascote Principal" class="w-full max-w-2xl translate-x-12 green-glow">
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 2: Problema/Motivação -->
+    <div class="slide" id="slide2">
+        <div class="max-w-6xl mx-auto w-full">
+            <h2 class="title-heavy text-7xl mb-16 border-b-[12px] border-black pb-4 inline-block italic">CHEGA DE MARKETING CHATO!</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div class="blue-box">
+                    <ul class="text-2xl font-bold space-y-6">
+                        <li>❌ Artes genéricas e frias</li>
+                        <li>❌ Linguagem puramente acadêmica</li>
+                        <li>❌ Distância do mundo real</li>
+                    </ul>
+                    <div class="mt-10 bg-white text-black p-4 inline-block font-black uppercase text-2xl">Precisamos de Identidade</div>
+                </div>
+                <div class="relative flex flex-col items-center">
+                    <img src="madMIEEEB.png" class="w-80 green-glow transform rotate-3">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 3: O Mascote -->
+    <div class="slide" id="slide3">
+        <div class="flex flex-col md:flex-row items-center gap-20 max-w-7xl mx-auto">
+            <div class="w-full md:w-1/2 flex justify-center">
+                <img src="smilingMIEEEB.png" class="w-[30rem] green-glow transform -rotate-2">
+            </div>
+            <div class="w-full md:w-1/2">
+                <h2 class="title-heavy text-8xl text-[#002855] mb-6">CONHEÇA O<br>MIEEEB.</h2>
+                <p class="text-2xl font-medium mb-8 leading-relaxed">
+                    Inspirado na estética "Rubber Hose" dos anos 30. 
+                    Ele é a ponte entre o passado histórico da IEEE e a juventude atual. MIEEEB é um alieeen que habita o ramo tem um tempo mas nunca teve seu devido destaque e agora ganha cara nova para conquistar novos membros e nossa gestão.
+                </p>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="border-4 border-black p-4 font-black uppercase text-center bg-[#8BC34A]">Tech-Retro</div>
+                    <div class="border-4 border-black p-4 font-black uppercase text-center bg-white">Acessível</div>
+                    <div class="border-4 border-black p-4 font-black uppercase text-center bg-white">Carismático</div>
+                    <div class="border-4 border-black p-4 font-black uppercase text-center bg-[#002855] text-white">IEEE DNA</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 4: Exemplo Instagram -->
+    <div class="slide" id="slide4">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16">
+            <div class="w-full md:w-1/2">
+                <h2 class="title-heavy text-7xl mb-6">A MARCA EM<br><span class="text-[#8BC34A]">AÇÃO.</span></h2>
+                <p class="text-xl font-bold mb-8 italic">Como o MIEEEB se comporta nas redes sociais:</p>
+                <div class="white-box shadow-[12px_12px_0px_#002855]">
+                    <h4 class="title-heavy text-2xl mb-2">Social Experience</h4>
+                    <p>O foco não é apenas informar a data do processo seletivo, mas criar o desejo de fazer parte do time. O mascote serve como o "host" da conversa.</p>
+                </div>
+                <div class="mt-8">
+                    <img src="pointingMIEEEB.png" class="w-40 green-glow transform -rotate-6">
+                </div>
+            </div>
+
+            <div class="w-full md:w-1/2 flex justify-center">
+                <!-- Mockup de Post (UI Dark, Foto Branca) -->
+                <div class="insta-post transform rotate-2">
+                    <div class="insta-header">
+                        <div class="insta-avatar"><div class="insta-avatar-inner"></div></div>
+                        <span class="font-bold tracking-wide text-[0.95rem]">ieee_branch_</span>
+                    </div>
+                    
+                    <div class="insta-content">
+                        <h3 class="title-heavy text-[#002855] text-5xl text-center z-10 leading-[0.8]">FAÇA<br>PARTE!</h3>
+                        <img src="jumpingMIEEEB.png" class="w-64 mt-4 z-10">
+                        <div class="absolute bottom-6 bg-[#8BC34A] px-6 py-2 font-black uppercase text-black rotate-[-3deg] border-4 border-black z-20 shadow-[4px_4px_0px_#002855]">
+                            PROCESSO SELETIVO 26
+                        </div>
+                    </div>
+                    
+                    <div class="insta-footer">
+                        <div class="flex gap-4 mb-3 text-xl">
+                            <span>🤍</span> <span>💬</span> <span>✈️</span>
+                        </div>
+                        <p class="leading-relaxed"><b class="text-white">ieee_branch_</b> O MIEEEB já deu o papo! Inscrições abertas no link da bio. ⚡️ #IEEE #Reboot</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 5: Cultura do Sticker -->
+    <div class="slide" id="slide5">
+        <div class="max-w-7xl mx-auto w-full">
+            <h2 class="title-heavy text-7xl mb-10 text-center">STICKERS DIGITAIS E FÍSICOS.</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="border-[10px] border-black p-8 shadow-[15px_15px_0px_#8BC34A]">
+                    <img src="sticker_sheet_gloss.png" alt="Adesivos" class="w-full">
+                    <p class="text-gray-400 font-black mt-6 text-center uppercase tracking-widest text-xs">Coleção Oficial de Stickers</p>
+                </div>
+                
+                <div class="space-y-12 text-center md:text-left">
+                    <div class="blue-box">
+                        <h3 class="title-heavy text-4xl mb-4 italic">Onde o engajamento acontece.</h3>
+                        <p class="text-xl"> O marketing que as pessoas realmente usam e compartilham.</p>
+                    </div>
+                    <div class="flex gap-8 justify-center">
+                        <img src="blinkingMIEEEB.png" class="w-44 green-glow transform -rotate-6">
+                        <img src="jumpingMIEEEB.png" class="w-44 green-glow transform rotate-6">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 6: Call to Action -->
+    <div class="slide" id="slide6">
+        <div class="text-center relative">
+            <h2 class="title-heavy text-[12rem] leading-none mb-6">BORA<br><span class="text-[#002855]">MUDAR?</span></h2>
+            <div class="flex justify-center items-center gap-16 mt-16">
+                <img src="mainMIEEEB.png" class="w-72 green-glow transform rotate-2">
+                <div class="text-left border-l-[12px] border-black pl-12 py-4">
+                    <p class="title-heavy text-6xl text-[#002855]">IEEE MKT REBOOT</p>
+                    <p class="title-slab text-3xl uppercase text-gray-500 mt-2">Vamos modernizar.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navegação -->
+    <div class="fixed bottom-10 right-10 flex items-center gap-6 z-[200]">
+        <div id="slideCounter" class="title-heavy text-5xl mr-4 text-gray-300">01</div>
+        <button onclick="prevSlide()" class="nav-btn">VOLTAR</button>
+        <button onclick="nextSlide()" class="nav-btn">PRÓXIMO</button>
+    </div>
+
+    <script>
+        let currentSlide = 1;
+        const totalSlides = 6;
+
+        function updateSlide() {
+            document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
+            document.getElementById('slide' + currentSlide).classList.add('active');
+            const counter = document.getElementById('slideCounter');
+            counter.innerText = currentSlide.toString().padStart(2, '0');
+        }
+
+        function nextSlide() {
+            if (currentSlide < totalSlides) {
+                currentSlide++;
+                updateSlide();
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 1) {
+                currentSlide--;
+                updateSlide();
+            }
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === "ArrowRight") nextSlide();
+            if (e.key === "ArrowLeft") prevSlide();
+        });
+    </script>
+</body>
+</html>
